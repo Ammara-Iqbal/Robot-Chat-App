@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: url('bg4.png') no-repeat center center fixed; /* Use your actual image file name */
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-container {
+  width: 400px;
+  max-height: 90vh;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 0 20px #4e54c8;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 2px solid transparent;
+  animation: glowBorder 3s infinite alternate;
+}
+
+@keyframes glowBorder {
+  from {
+    border-color: #4e54c8;
+    box-shadow: 0 0 15px #4e54c8;
+  }
+  to {
+    border-color: #66a6ff;
+    box-shadow: 0 0 25px #66a6ff;
+  }
+}
+
+.chat-header {
+  background-color: #4e54c8;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 18px;
+  position: relative;
+}
+
+#clear-button {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+#clear-button:hover {
+  color: #ffdddd;
+}
+
+.chat-box {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  scroll-behavior: smooth;
+}
+
+.message {
+  padding: 10px 15px;
+  border-radius: 15px;
+  max-width: 75%;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.sent {
+  background-color: #daf8cb;
+  align-self: flex-end;
+}
+
+.received {
+  background-color: #f1f0f0;
+  align-self: flex-start;
+}
+
+.timestamp {
+  font-size: 10px;
+  color: #888;
+  margin-top: 5px;
+  text-align: right;
+}
+
+.chat-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.chat-input input:focus {
+  border-color: #4e54c8;
+  box-shadow: 0 0 5px rgba(78, 84, 200, 0.5);
+  outline: none;
+}
+
+.chat-input button {
+  padding: 10px 15px;
+  margin-left: 10px;
+  border: none;
+  background-color: #4e54c8;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.chat-input button:hover {
+  background-color: #5c62e6;
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
